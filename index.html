@@ -1,0 +1,464 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Meri Maharani Ji 💗</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+
+body{
+ min-height:100vh;
+ overflow-x:hidden;
+ background:linear-gradient(180deg,#ffd8e7,#ffb5ce,#ffeaf2);
+ color:#56222f;
+}
+
+.page{
+ max-width:430px;
+ margin:auto;
+ padding:30px 17px 45px;
+ text-align:center;
+ position:relative;
+ z-index:2;
+}
+
+.sorry{
+ font-size:64px;
+ font-weight:900;
+ color:#ff3975;
+ text-shadow:3px 3px white,0 7px 0 #d51e59;
+ animation:pulse 1.7s infinite;
+}
+
+@keyframes pulse{
+ 50%{transform:scale(1.05)}
+}
+
+.maharani{
+ font-size:27px;
+ font-weight:900;
+ color:#9e193e;
+ margin-top:5px;
+}
+
+.maharani span{color:#ff3975}
+
+.card{
+ margin-top:30px;
+ padding:30px 15px 24px;
+ background:#fff;
+ border:2px dashed #ff86aa;
+ border-radius:27px;
+ box-shadow:0 12px 30px #9d315225;
+ position:relative;
+}
+
+.card:before{
+ content:"🎀";
+ position:absolute;
+ top:-31px;
+ left:50%;
+ transform:translateX(-50%);
+ font-size:44px;
+}
+
+.card h2{
+ color:#e52d67;
+ font-size:25px;
+ margin-bottom:13px;
+}
+
+.card p{
+ font-size:20px;
+ line-height:1.55;
+ font-weight:bold;
+}
+
+.face{
+ font-size:32px;
+ margin-top:8px;
+}
+
+/* CUTE ANIMATED BUNNY */
+
+.character{
+ height:220px;
+ position:relative;
+ margin:20px auto 5px;
+ animation:bounce 1.7s infinite ease-in-out;
+}
+
+@keyframes bounce{
+ 50%{transform:translateY(-8px)}
+}
+
+.bunny{
+ position:absolute;
+ left:14%;
+ bottom:8px;
+ width:130px;
+ height:130px;
+ background:linear-gradient(145deg,#fff,#ffeef5);
+ border:3px solid #e7b8c7;
+ border-radius:50%;
+ box-shadow:0 10px 20px #8e355522;
+}
+
+.ear{
+ position:absolute;
+ width:42px;
+ height:88px;
+ top:-65px;
+ background:#fff8fb;
+ border:3px solid #e7b8c7;
+ border-radius:50%;
+}
+
+.ear:after{
+ content:"";
+ position:absolute;
+ width:17px;
+ height:60px;
+ left:9px;
+ top:10px;
+ background:#ffb8ce;
+ border-radius:50%;
+}
+
+.ear.left{left:17px;transform:rotate(-10deg)}
+.ear.right{right:17px;transform:rotate(10deg)}
+
+.eye{
+ position:absolute;
+ top:49px;
+ width:13px;
+ height:17px;
+ background:#292027;
+ border-radius:50%;
+}
+
+.eye.left{left:32px}
+.eye.right{right:32px}
+
+.blush{
+ position:absolute;
+ top:76px;
+ width:23px;
+ height:12px;
+ background:#ff9fb9;
+ border-radius:50%;
+}
+
+.blush.left{left:8px}
+.blush.right{right:8px}
+
+.mouth{
+ position:absolute;
+ top:73px;
+ left:50px;
+ font-size:24px;
+}
+
+.bow{
+ position:absolute;
+ top:10px;
+ left:50%;
+ transform:translateX(-50%);
+ font-size:34px;
+}
+
+/* TEDDY */
+
+.teddy{
+ position:absolute;
+ right:13%;
+ bottom:13px;
+ width:105px;
+ height:115px;
+ background:linear-gradient(145deg,#e0aa7c,#b8754d);
+ border:3px solid #9c633f;
+ border-radius:47%;
+ box-shadow:0 10px 20px #8e355522;
+}
+
+.teddy:before,.teddy:after{
+ content:"";
+ position:absolute;
+ width:38px;
+ height:38px;
+ top:-18px;
+ background:#d99b6e;
+ border:3px solid #9c633f;
+ border-radius:50%;
+}
+
+.teddy:before{left:-3px}
+.teddy:after{right:-3px}
+
+.t-eye{
+ position:absolute;
+ top:40px;
+ width:10px;
+ height:13px;
+ background:#34252a;
+ border-radius:50%;
+}
+
+.t-eye.left{left:25px}
+.t-eye.right{right:25px}
+
+.t-nose{
+ position:absolute;
+ left:41px;
+ top:57px;
+ width:23px;
+ height:17px;
+ background:#694033;
+ border-radius:50%;
+}
+
+.teddy-heart{
+ position:absolute;
+ left:28px;
+ bottom:1px;
+ font-size:48px;
+ animation:heart 1s infinite;
+}
+
+@keyframes heart{
+ 50%{transform:scale(1.12)}
+}
+
+/* BUTTONS */
+
+button{
+ width:100%;
+ padding:17px;
+ margin-top:12px;
+ border-radius:50px;
+ font-size:19px;
+ font-weight:bold;
+}
+
+.yes{
+ border:0;
+ color:white;
+ background:linear-gradient(#ff6090,#ed2866);
+ box-shadow:0 6px 0 #c81c54;
+}
+
+.no{
+ background:white;
+ color:#ed3970;
+ border:2px solid #ff86aa;
+}
+
+/* SUCCESS */
+
+#success{
+ display:none;
+ margin-top:20px;
+ padding:23px 15px;
+ background:#fff8fb;
+ border:2px dashed #ff6e9d;
+ border-radius:24px;
+}
+
+#success h2{
+ color:#e92c69;
+ font-size:29px;
+ margin-bottom:10px;
+}
+
+#success p{
+ font-size:19px;
+ line-height:1.5;
+ font-weight:bold;
+}
+
+.love{
+ margin-top:12px;
+ font-size:27px;
+ color:#ed2866;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+ position:fixed;
+ bottom:-50px;
+ font-size:25px;
+ animation:float 7s linear infinite;
+ z-index:1;
+}
+
+.h1{left:7%}
+.h2{left:25%;animation-delay:2s}
+.h3{left:50%;animation-delay:4s}
+.h4{left:75%;animation-delay:1s}
+.h5{left:90%;animation-delay:3s}
+
+@keyframes float{
+ 0%{transform:translateY(0) scale(.7);opacity:0}
+ 20%{opacity:1}
+ 100%{transform:translateY(-110vh) scale(1.4);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart h1">💗</div>
+<div class="heart h2">💕</div>
+<div class="heart h3">💖</div>
+<div class="heart h4">💗</div>
+<div class="heart h5">💞</div>
+
+<div class="page">
+
+<div class="sorry">Sorry</div>
+
+<div class="maharani">
+Meri <span>Maharani Ji</span> 💗
+</div>
+
+<div class="card">
+
+<h2>Meri Maharani Ji 🥺</h2>
+
+<p>
+Naak par jada gussa nhi rakhte hai 😤<br>
+warna dard karegi 🥺😂
+</p>
+
+<div class="face">🥺👉👈</div>
+
+</div>
+
+
+<!-- CUTE ANIMATED BUNNY + TEDDY -->
+
+<div class="character">
+
+<div class="bunny">
+
+<div class="ear left"></div>
+<div class="ear right"></div>
+
+<div class="bow">🎀</div>
+
+<div class="eye left"></div>
+<div class="eye right"></div>
+
+<div class="blush left"></div>
+<div class="blush right"></div>
+
+<div class="mouth">🥺</div>
+
+</div>
+
+
+<div class="teddy">
+
+<div class="t-eye left"></div>
+<div class="t-eye right"></div>
+
+<div class="t-nose"></div>
+
+<div class="teddy-heart">💗</div>
+
+</div>
+
+</div>
+
+
+<button class="yes" onclick="forgive()">
+❤️ Maan Jao 🥺
+</button>
+
+<button class="no" id="noBtn">
+No 😤
+</button>
+
+
+<div id="success">
+
+<h2>Maan Jao 🥺💗</h2>
+
+<p>
+Meri Maharani Ji maan jao 😭❤️<br>
+Ab itna gussa bhi nahi karna 🥺
+</p>
+
+<div class="love">
+I Love Youuu 💕🫶
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+const noBtn=document.getElementById("noBtn");
+
+function runAway(){
+
+ let x=Math.random()*(window.innerWidth-130);
+ let y=Math.random()*(window.innerHeight-90);
+
+ noBtn.style.position="fixed";
+ noBtn.style.left=Math.max(10,x)+"px";
+ noBtn.style.top=Math.max(10,y)+"px";
+ noBtn.style.width="115px";
+ noBtn.style.zIndex="9999";
+}
+
+noBtn.addEventListener("mouseover",runAway);
+
+noBtn.addEventListener("touchstart",function(e){
+ e.preventDefault();
+ runAway();
+});
+
+
+function forgive(){
+
+ document.getElementById("success").style.display="block";
+
+ for(let i=0;i<40;i++){
+
+  let h=document.createElement("div");
+
+  h.innerHTML=["❤️","💗","💕","💖","💞"]
+  [Math.floor(Math.random()*5)];
+
+  h.style.position="fixed";
+  h.style.left=Math.random()*100+"vw";
+  h.style.top=Math.random()*100+"vh";
+  h.style.fontSize=(20+Math.random()*30)+"px";
+  h.style.zIndex="10000";
+  h.style.transition="1.5s";
+
+  document.body.appendChild(h);
+
+  setTimeout(()=>{
+   h.style.transform="translateY(-180px) scale(1.5)";
+   h.style.opacity="0";
+  },50);
+
+  setTimeout(()=>{
+   h.remove();
+  },1600);
+ }
+}
+
+</script>
+
+</body>
+</html>
+```
